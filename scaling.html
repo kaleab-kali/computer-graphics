@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 canvas scaling</title>
+<script>
+    function draw() {
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+    
+        ctx.fillStyle = 'gray';
+        ctx.fillRect(20, 20, 80, 50);
+
+        ctx.save();
+        ctx.translate(110, 22);
+        ctx.scale(0.5, 0.5);
+        ctx.fillRect(0, 0, 80, 50);
+        ctx.restore();
+
+        ctx.translate(170, 20);
+        ctx.scale(1.5, 1.5);
+        ctx.fillRect(0, 0, 80, 50);
+    }    
+</script>
+</head>
+    
+<body onload="draw();">
+    <canvas id="myCanvas" width="300" height="200">
+    </canvas>
+</body>
+</html>
